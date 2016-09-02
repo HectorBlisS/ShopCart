@@ -1,0 +1,13 @@
+<h1>Esta es la lista chirga de Productos</h1>
+
+<ul>
+	{%for producto in productos%}
+	<li><a href="{%url 'shop:detalle' producto.id%}">
+		{{producto.nombre}}
+	</a></li>
+	{%empty%}
+	<h2>No hay productos pa mostrar</h2>
+	{%endfor%}
+
+
+</ul>
