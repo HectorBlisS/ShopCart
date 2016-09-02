@@ -18,7 +18,7 @@ class Agregar(View):
 		return redirect('cart:cart_detail')
 
 class Remove(View):
-	def post(self,request,product_id):
+	def get(self,request,product_id):
 		cart = Cart(request)
 		product = get_object_or_404(Product,id=product_id)
 		cart.remove(product)
