@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block titulo%} Checkout {%endblock titulo%}
+
+{%block content%}
+
+<h3>Confirma Tu orden</h3>
+
+<ul>
+{%for item in cart%}
+<li>
+{{item.quantity}} X {{item.product.nombre}}
+<span>$ {{item.total_price}}</span>
+</li>
+{%endfor%}
+
+</ul>
+<p>
+Total: $ {{cart.get_total_price}}
+</p>
+
+<form action="." method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<input class="btn" type="submit" value="Pagar">
+
+</form>
+{%endblock content%}
