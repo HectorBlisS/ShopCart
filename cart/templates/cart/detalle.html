@@ -1,9 +1,7 @@
-<html>
-<head>
-	<title>Carrito</title>
-	<meta charset="utf-8">
-</head>
-<body>
+{%extends 'base.html'%}
+
+
+{%block content%}
 	<h1>Tu pinche carrito</h1>
 	<table>
 		<thead>
@@ -51,6 +49,17 @@
 		</tbody>
 	</table>
 
+	<button class="btn azul" >
+		<a href="{%url 'shop:tienda'%}">
+		Continuar comprando
+		</a>
+	</button>
+	<button class="btn rojo">
+		<a href="">
+		Pagar
+		</a>
+	</button>
 
-</body>
-</html>
+
+
+{%endblock content%}
